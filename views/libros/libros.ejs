@@ -16,8 +16,20 @@
                         <tr>
                             <td> <%=libros[libro].id %>  </td>
                             <td> <%=libros[libro].nombre %></td>
-                            <td> <%=libros[libro].imagen %> </td>
-                            <td> Eliminar | Editar </td>
+                            <td> <img class="img-thumbnail" width="100" src="images/<%=libros[libro].imagen %>" alt=""> </td>
+                            <td> 
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                    <form class="form-inline" method="post" action="/libros/editar/<%=libros[libro].id%>">
+                                        <button class="btn btn-info" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    </form>
+                                </div>  
+                                | 
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                    <form class="form-inline" method="post" action="/libros/eliminar/<%=libros[libro].id%>">
+                                        <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                </div> 
+                            </td>
                         </tr> 
                     <% } %>                   
                 </tbody>
