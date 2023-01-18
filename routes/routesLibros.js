@@ -19,8 +19,16 @@ var cargar = multer({ storage: rutaAlmacen });
 // ruta para mostrar libros a funcion index
 router.get("/", librosController.index);
 router.get("/crear", librosController.crear);
-
 router.post("/", cargar.single("archivo"), librosController.guardar);
+
 router.post("/eliminar/:id", librosController.eliminar);
+
+router.get("/editar/:id", librosController.editar);
+
+router.post(
+  "/actualizar",
+  cargar.single("archivo"),
+  librosController.actualizar
+);
 
 module.exports = router;
