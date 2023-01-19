@@ -1,10 +1,9 @@
-var conexion = require("../config/conexion");
-var libroModels = require("../models/libroModels");
-var borrar = require("fs");
+// var conexion = require("../config/conexion");
+// var libroModels = require("../models/libroModels");
 
 module.exports = {
   // mostrar libros
   index: function (req, res) {
-    res.render("../views/index.ejs", { title: "Libros", libros: datos });
+    res.render("../views/index.ejs");
   },
 };
